@@ -1,0 +1,64 @@
+<ion-view title="产品详情">
+  <ion-content class="product-detail">
+    <div class="head">
+      <img src="{{productDetail.url}}">
+    </div>
+    <div class="select">
+      <div class="select-item" ng-class="{active: selectedProduct == scheme}" ng-repeat="scheme in productDetail.prodSchemeList" ng-click="selectProduct(scheme)">
+        <div class="name">{{scheme.name}}</div>
+        <div class="money">{{scheme.desc}}</div>
+      </div>
+    </div>
+    <div class="detail">
+      <div class="msb-tabs">
+        <div class="msb-tab-item" ng-class="{active: productDetail.index = 1}" ng-click="selectItem(1)">产品介绍</div>
+        <div class="msb-tab-item" ng-class="{active: productDetail.index === 0}" ng-click="selectItem(0)">保障范围</div>
+        <div class="msb-tab-item" ng-class="{active: productDetail.index == 2}" ng-click="selectItem(2)">理赔须知</div>
+      </div>
+
+      <div class="safeguard-range msb-list" ng-show="productDetail.index == 0">
+        <div class="msb-item-between" ng-repeat="coverage in selectedProduct.prodObjectData.COVERAGE">
+          <span class="msb-item">{{coverage.name}}</span>
+          <span class="msb-item">{{coverage.sumInsured | unit}}</span>
+        </div>
+      </div>
+
+      <div class="product-introduction" ng-show="productDetail.index == 1">
+        <div class="introduction-item">
+          <div class="" ng-repeat="item in selectedProduct.introduce.itemList">
+            <span>{{item.value}}</span>
+          </div>
+        </div>
+        <div class="introduction-obj msb-list">
+          <div class="msb-item-between" ng-repeat="obj in selectedProduct.introduce.objList">
+            <span class="msb-item">{{obj.name}}</span>
+            <span class="msb-item">{{obj.value}}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="claims-attention" ng-show="productDetail.index == 2">
+        <div class="attention">
+          <img src="img/product-detail/mobile.png">
+          <span>拨打95585报案配合理赔勘查</span>
+        </div>
+        <div class="attention">
+          <img src="img/product-detail/document.png">
+          <span>提供事故有关资料</span>
+        </div>
+        <div class="attention">
+          <img src="img/product-detail/clock.png" >
+          <span>等待保险公司确定损失及理算</span>
+        </div>
+        <div class="attention">
+          <img src="img/product-detail/money.png">
+          <span>领取赔款</span>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+  <div class="msb-foot">
+    <span class="money">保费：<span class="small">¥</span><span class="big">{{getInt(selectedProduct.desc)}}</span><span class="small">{{getDecimal(selectedProduct.desc)}}</span></span>
+    <button class="button button-assertive" ng-click="pay()">立即投保</button>
+  </div>
+</ion-view>

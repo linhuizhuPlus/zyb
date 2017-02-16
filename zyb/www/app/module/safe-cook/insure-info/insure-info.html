@@ -1,0 +1,90 @@
+<ion-view title="投保信息">
+  <ion-content class="insure-info">
+    <div class="msb-subtitle">投保人</div>
+    <div class="msb-list with-border">
+      <div class="msb-item-around msb-input">
+        <div class="msb-item"><span class="msb-must-input">姓名</span></div>
+        <input type="text" placeholder="请输入姓名" class="msb-item" ng-model="policyHolder.name">
+      </div>
+      <div class="msb-item-around msb-input">
+        <div class="msb-item"><span class="msb-must-input">身份证</span></div>
+        <input type="text" placeholder="请输入身份证号码" class="msb-item" ng-model="policyHolder.certNo">
+      </div>
+      <div class="msb-item-around msb-input">
+        <div class="msb-item"><span class="msb-must-input">手机号</span></div>
+        <input type="text" placeholder="请输入手机号" class="msb-item" ng-model="policyHolder.phoneNo">
+      </div>
+      <div class="msb-item-around msb-input">
+        <div class="msb-item"><span>邮箱</span></div>
+        <input type="email" placeholder="请输入邮箱" class="msb-item" ng-model="policyHolder.email">
+      </div>
+    </div>
+
+    <div class="msb-subtitle applicant">
+      <span>被保险人</span>
+      <div>
+        <span>同投保人</span>
+        <label class="checkbox msb-checkbox-assertive msb-checkbox-medium" >
+          <input type="checkbox" class="check" ng-checked="insureInfo.insuredChecked" ng-click="changeInsured()">
+        </label>
+      </div>
+    </div>
+    <div class="msb-list with-border insured" ng-show="!insureInfo.insuredChecked">
+      <div class="msb-item-around msb-input">
+        <div class="msb-item"><span class="msb-must-input">姓名</span></div>
+        <input type="text" placeholder="请输入姓名" class="msb-item" ng-model="insured.name">
+      </div>
+      <div class="msb-item-around msb-input">
+        <div class="msb-item"><span class="msb-must-input">身份证</span></div>
+        <input type="text" placeholder="请输入身份证号码" class="msb-item" ng-model="insured.certNo">
+      </div>
+      <div class="msb-item-around msb-input">
+        <div class="msb-item"><span class="msb-must-input">手机号</span></div>
+        <input type="text" placeholder="请输入手机号" class="msb-item" ng-model="insured.phoneNo">
+      </div>
+      <div class="msb-item-around msb-input">
+        <div class="msb-item"><span>邮箱</span></div>
+        <input type="email" placeholder="请输入邮箱" class="msb-item" ng-model="insured.email">
+      </div>
+    </div>
+
+
+    <div class="msb-list with-border address">
+      <div class="msb-item-around msb-input">
+        <div class="msb-item"><span>财产地址</span></div>
+        <input type="text" placeholder="请输入地址" class="msb-item" ng-model="address.address">
+      </div>
+    </div>
+    <div class="msb-list with-border">
+      <div class="msb-item-around msb-input">
+        <div class="msb-item"><span>购买份数</span></div>
+        <div class="msb-item buy-count">
+          <img src="img/product-detail/sub.png" ng-click="sub()">
+          <span>{{baseInfo.buyNum}}</span>
+          <img src="img/product-detail/add.png" ng-click="add()">
+        </div>
+      </div>
+      <div class="msb-item-around msb-input msb-calendar">
+        <div class="msb-item"><span>保险起期</span></div>
+        <input type="date" class="msb-item" ng-model="insurancePeriod.startDate">
+      </div>
+      <div class="msb-item-around msb-input msb-calendar">
+        <div class="msb-item"><span>保险终期</span></div>
+        <input type="date" class="msb-item" ng-model="insurancePeriod.endDate">
+      </div>
+    </div>
+
+    <!--<ion-checkbox class="msb-checkbox-assertive checkbox-assertive">我已阅读<a>投保须知、保险条款</a>并同意投保</ion-checkbox>-->
+    <div class="claim">
+      <label class="checkbox msb-checkbox-assertive-square msb-checkbox-small">
+        <input type="checkbox" class="check msb-checkbox" ng-checked="insureInfo.claimChecked" ng-click="changeClaim()">
+      </label>
+      <span>我已阅读<a>投保须知、保险条款</a>并同意投保</span>
+    </div>
+  </ion-content>
+    <div class="msb-foot">
+      <span class="money">保费：<span class="small">¥</span><span class="big">{{getInt(baseInfo.total)}}</span><span class="small">{{getDecimal(baseInfo.total)}}</span></span>
+      <button class="button button-assertive" ng-click="insure()">立即投保</button>
+    </div>
+
+</ion-view>

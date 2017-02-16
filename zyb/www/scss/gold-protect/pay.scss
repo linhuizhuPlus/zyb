@@ -1,0 +1,77 @@
+.pay {
+  margin-top: 6px;
+
+  .applicant {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 0 10px;
+
+    div {
+      display: flex;
+      align-items: center;
+    }
+
+    .checkbox {
+      margin-left: 10px;
+    }
+  }
+
+  .product-info {
+    .type {
+      flex: 0 1 35%;
+    }
+    .count {
+      flex: 0 1 35% !important;
+      text-align: right;
+    }
+  }
+
+  .pay-tabs {
+    justify-content: center;
+    border-bottom: 1px solid $assertive;
+
+    .msb-tab-item {
+      flex-basis: 45%;
+    }
+    .msb-tab-item.active {
+      background: $assertive;
+      color: #fff;
+    }
+  }
+
+  .pay-money {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 14px;
+    background: #fff;
+
+    .red {
+      color: $assertive;
+    }
+  }
+
+  .pay-method {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 14px;
+    background: #fff;
+
+    .icon {
+      color: #c7c6cc;
+    }
+
+    .method {
+      padding-left: 26px;
+    }
+
+    .method.wechat {
+      background: url(../../img/product-detail/wechat.png) no-repeat left center;
+      background-size: 20px;
+    }
+    .method.union {
+      background: url(../../img/product-detail/union.png) no-repeat left center;
+      background-size: 20px;
+    }
+  }
+}

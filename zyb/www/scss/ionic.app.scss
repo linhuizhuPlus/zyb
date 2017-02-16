@@ -1,0 +1,46 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #444 !default;
+*/
+
+$assertive:                       #d51e0e !default;
+
+$font-size-base:                  16px !default;
+
+$base-background-color:           #f4f4f4 !default;
+//$base-color:                      #1c1c1c !default;
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+@import "../lib/ionic/scss/ionic";
+
+@import "home";
+@import "./safety-life/safety-life";
+@import "safety-life/product-detail";
+@import "safety-life/insure-info";
+@import "safety-life/pay";
+
+@import "./gold-protect/gold-protect" ;
+@import "gold-protect/product-detail";
+@import "gold-protect/insure-info";
+@import "gold-protect/pay";
+
+@import "./safe-cook/safe-cook" ;
+@import "safe-cook/product-detail";
+@import "safe-cook/insure-info";
+@import "safe-cook/pay";
+

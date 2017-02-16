@@ -1,0 +1,61 @@
+.insure-info {
+  .applicant {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 0 10px;
+
+    div {
+      display: flex;
+      align-items: center;
+    }
+
+    .checkbox {
+      margin-left: 10px;
+    }
+  }
+
+  .address {
+    margin-bottom: 10px;
+  }
+
+  .buy-count {
+    flex: 0 1 70%;
+    display: flex;
+    align-items: center;
+    padding: 7px 0;
+
+    img {
+      width: 24px;
+    }
+
+    span {
+      flex-basis: 80px;
+      text-align: center;
+    }
+  }
+
+  .msb-calendar {
+    background: #fff url(../../img/product-detail/calendar.png) no-repeat right 15px center;
+    background-size: 26px;
+
+    input {
+      background: transparent;
+    }
+  }
+
+  .claim {
+    display: flex;
+    align-items: center;
+    margin-top: 6px;
+  }
+
+  .insured {
+    margin-bottom: 10px;
+  }
+}
+.msb-foot {
+  position: fixed;
+  bottom: 0;
+  width:100%;
+}

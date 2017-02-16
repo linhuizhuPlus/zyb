@@ -1,0 +1,19 @@
+<ion-view title="我的微店">
+  <ion-content class="home">
+    <div class="msb-tabs home-tabs">
+      <div class="msb-tab-item" ng-class="{active: home.currentTab == 0}" ng-click="changeTab(0)">全部</div>
+      <div class="msb-tab-item" ng-class="{active: home.currentTab == 1}" ng-click="changeTab(1)">意外</div>
+      <div class="msb-tab-item" ng-class="{active: home.currentTab == 2}" ng-click="changeTab(2)">家财</div>
+    </div>
+    <div class="products">
+      <div class="product" ng-repeat="product in productList.data | filter:filterProduct" style="background-image: url({{product.cImgUrl}})" ng-click="goProduct(product)">
+        <div class="top">
+          <div class="name">"{{product.cName}}"</div>
+          <div class="desc">{{product.cDesc}}</div>
+          <div class="price">¥<span>{{product.nPrice}}</span>元起</div>
+        </div>
+      </div>
+    </div>
+    <ion-infinite-scroll ng-if="moreDataCanLoad()" on-infinite="loadMore()" distance="5%" immediateCheck="true"></ion-infinite-scroll>
+  </ion-content>
+</ion-view>
